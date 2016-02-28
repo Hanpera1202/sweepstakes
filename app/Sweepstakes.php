@@ -83,7 +83,7 @@ class Sweepstakes extends Model
             $entry = Entry::firstOrCreate(['user_id' => $user_id,
                                                        'sweepstakes_id' => $sweepstakes_id]);
             $entry->increment('entry_num', 1);
-            $sweepstakes = Competition::find($sweepstakes_id);
+            $sweepstakes = Sweepstakes::find($sweepstakes_id);
             $sweepstakes->increment('entry_num', 1);
         });
 
