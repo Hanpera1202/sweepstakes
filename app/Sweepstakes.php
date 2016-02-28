@@ -57,7 +57,7 @@ class Sweepstakes extends Model
         return false;
     }
     
-    public static function apply($user_unique_id, $sweepstakes_id) {
+    public static function entry($user_unique_id, $sweepstakes_id) {
         $user = User::where('unique_id', '=', $user_unique_id)->first();
         if(!isset($user->id)){
             return array("result" => false,
