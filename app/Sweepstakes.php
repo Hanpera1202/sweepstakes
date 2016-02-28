@@ -80,7 +80,7 @@ class Sweepstakes extends Model
         }
 
         DB::transaction(function() use ($user_id, $sweepstakes_id){
-            $entry = Application::firstOrCreate(['user_id' => $user_id,
+            $entry = Entry::firstOrCreate(['user_id' => $user_id,
                                                        'sweepstakes_id' => $sweepstakes_id]);
             $entry->increment('entry_num', 1);
             $sweepstakes = Competition::find($sweepstakes_id);
